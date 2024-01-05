@@ -1,0 +1,20 @@
+/* ContentSection.css */
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.image-link {
+  @apply block overflow-hidden;
+}
+
+.zoom-image {
+  @apply transition-transform duration-300 ease-in-out;
+
+  &:hover {
+    @apply transform scale-110;
+  }
+}

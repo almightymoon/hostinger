@@ -1,0 +1,11 @@
+Footer {
+  width: 99vw !important;
+  position: relative;
+  right: 4.5vw;
+}
+@media screen and (max-width: 768px) {
+  Footer {
+    position: static;
+    left: 1%;
+  }
+}

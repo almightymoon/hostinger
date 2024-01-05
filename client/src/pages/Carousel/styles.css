@@ -1,0 +1,22 @@
+/* styles.css */
+.hero-sec {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(./images/BAckgroundImg.jpg);
+  width: 100%; /* Use full width by default */
+  height: 550px; /* Set a default height */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .hero-sec {
+    height: 550px;
+  }
+}
+@media screen and (max-width: 429px) {
+  .hero-sec {
+    margin: 0 auto; /* Center the element horizontally */
+    width: 100%; /* Use full width for smaller screens */
+    max-width: 428px; /* Set a maximum width */
+  }
+}
