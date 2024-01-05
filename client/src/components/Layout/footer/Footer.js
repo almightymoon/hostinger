@@ -1,4 +1,5 @@
 // src/components/Footer.js
+import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -34,26 +35,13 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className='flex space-x-4 mb-4 sm:mb-0'>
-          {/* <FontAwesomeIcon
-            className='p-2 rounded-full'
-            icon={faTwitter}
-            style={{ height: "30px" }}
-          /> */}
+          <Link to="https://www.facebook.com/ImanTilesFactory/">
           <FontAwesomeIcon
             className='p-2 rounded-full'
             icon={faFacebook}
             style={{ height: "30px" }}
           />
-          {/* <FontAwesomeIcon
-            className='p-2 rounded-full'  
-            icon={faInstagram}
-            style={{ height: "30px" }}
-          />
-          <FontAwesomeIcon
-            className='p-2 rounded-full'
-            icon={faLinkedin}
-            style={{ height: "30px" }}
-          /> */}
+          </Link>
         </div>
       </div>
 
