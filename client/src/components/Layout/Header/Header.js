@@ -49,32 +49,39 @@ export default function Header() {
   };
 
   return (
-    <Disclosure as='nav' className='bg-white-800 mt-4'>
+    <Disclosure as="nav" className="bg-white-800 mt-4">
       {({ open }) => (
         <>
-          <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mt-4'>
-            <div className='relative flex h-6 items-center justify-between'>
-              <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
-                <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
-                  <span className='absolute -inset-0.5' />
-                  <span className='sr-only'>Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className='block h-6 w-6' aria-hidden='true' />
-                  ) : (
-                    <Bars3Icon className='block h-6 w-6' aria-hidden='true' />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className='flex sm:px-6 items-center cursor-pointer'>
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mt-4">
+            <div className="relative flex h-6 items-center justify-between">
+            <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+    <span className="absolute -inset-0.5" />
+    <span className="sr-only">Open main menu</span>
+    {open ? (
+      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+    ) : (
+      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+    )}
+  </Disclosure.Button>
+</div>
+
+              <div className="flex sm:px-6 items-center cursor-pointer">
                 <h1>
-                  <Link to='/'>IMAN TILES</Link>
+                  <Link to="/">IMAN TILES</Link>
                 </h1>
               </div>
-              <div className='flex flex-1 items-center justify-between gap-8 sm:items-stretch sm:justify-start'>
-                <div className='hidden sm:ml-6 sm:block '>
-                  <div className='flex space-x-4 '>
+              <div className="flex flex-1 items-center justify-between gap-8 sm:items-stretch sm:justify-center">
+                <div className="hidden sm:ml-6 sm:block ">
+                  <div className="flex space-x-4 ">
                     {navigation.map((item) => (
-                      <div className='relative group' key={item.name}>
+                      <div
+                        className="relative group"
+                        key={item.name}
+                        // Add "hidden" class for small screens
+                        ClassName={`${
+                          item.name !== "CATEGORY" ? "hidden sm:block" : ""
+                        }`}>
                         <Link
                           key={item.name}
                           to={item.to}
@@ -88,15 +95,15 @@ export default function Header() {
                           {item.name}
                         </Link>
                         {item.name === "CATEGORY" && (
-                          <div className='hidden group-hover:block absolute  right-0 left-5 z-10 mt-2 w-40  text-center rounded-md bg-white  border-2 border-blue-400 focus:outline'>
+                          <div className="hidden group-hover:block absolute  right-0 left-5 z-10 mt-2 w-40  text-center rounded-md bg-white  border-2 border-blue-400 focus:outline">
                             <Link
-                              to='#'
-                              className='px-0 py-0 text-md text-right text-gray-700'>
+                              to="#"
+                              className="px-0 py-0 text-md text-right text-gray-700">
                               Floor Tiles
                             </Link>
                             <Link
-                              to='#'
-                              className='block px-0 py-0 text-sm text-gray-700'>
+                              to="#"
+                              className="block px-0 py-0 text-sm text-gray-700">
                               Submenu Item 2
                             </Link>
                           </div>
@@ -106,44 +113,47 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div className='flex items-end  space-x-4 sm:none'>
-                <div className='flex items-center '>
+              <div className="hidden sm:flex  flex items-end  space-x-4">
+                <div className="flex items-center ">
                   <Link
-                    to='#'
-                    className='ml-4 text-gray-800 hover:text-gray-300'
+                    to="#"
+                    className="ml-4 text-gray-800 hover:text-gray-300"
                     onClick={handleSearchIconClick}>
                     <MagnifyingGlassPlusIcon
-                      className='h-6 w-6'
-                      aria-hidden='true'
+                      className="h-6 w-6"
+                      aria-hidden="true"
                     />
                   </Link>
                   {isSearchOpen && <SearchForm />}
                 </div>
                 <Badge count={cart?.length} showZero offset={[10, -5]}>
                   <Link
-                    to='/cart'
-                    className='ml-4 text-gray-800 hover:text-gray-300'>
-                    <ShoppingCartIcon className='h-6 w-6' aria-hidden='true' />
+                    to="/cart"
+                    className="ml-4 text-gray-800 hover:text-gray-300">
+                    <ShoppingCartIcon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </Badge>
                 <div>
                   {auth.user ? (
                     <Link
-                      to='/logout'
-                      className='ml-4 text-gray-800 hover:text-gray-300'
+                      to="/logout"
+                      className="ml-4 text-gray-800 hover:text-gray-300"
                       onClick={handleLogout}>
                       Logout
                     </Link>
                   ) : (
                     <>
                       <Link
-                        to='/login'
-                        className='ml-4 text-gray-800 hover:text-gray-300'>
+                        to="/login"
+                        className="ml-4 text-gray-800 hover:text-gray-300">
                         Login
                       </Link>
                       <Link
-                        to='/register'
-                        className='ml-4 text-gray-800 hover:text-gray-300'>
+                        to="/register"
+                        className="ml-4 text-gray-800 hover:text-gray-300">
                         Register
                       </Link>
                     </>
@@ -152,25 +162,40 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className='sm:hidden'>
-            <div className='space-y-1 px-2 pb-3 pt-2'>
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as='a'
-                  href={item.to}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}>
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
+
+          <Disclosure.Panel className="sm:hidden">
+  <div className="space-y-1 px-2 pb-3 pt-2">
+    {navigation.map((item) => (
+      <Disclosure.Button
+        key={item.name}
+        as="a"
+        href={item.to}
+        className={classNames(
+          item.current
+            ? "bg-gray-900 text-white"
+            : "text-black hover:bg-gray-700 hover:text-white", // Change color to black
+          "block rounded-md px-3 py-2 text-base font-medium"
+        )}
+        aria-current={item.current ? "page" : undefined}
+      >
+        {item.name}
+      </Disclosure.Button>
+    ))}
+    {/* Add conditional rendering for login/logout options */}
+    {auth.user ? (
+      <div className="flex flex-col space-y-2">
+        <a onClick={handleLogout} class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" data-headlessui-state="open">logout</a>
+      </div>
+    ) : (
+      <div className="flex flex-col space-y-2">
+       <a href="/login" class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" data-headlessui-state="open">Login</a>
+        <a href="/register" class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" data-headlessui-state="open">Register</a>
+      </div>
+    )}
+    {/* End of conditional rendering */}
+  </div>
+</Disclosure.Panel>
+
         </>
       )}
     </Disclosure>
