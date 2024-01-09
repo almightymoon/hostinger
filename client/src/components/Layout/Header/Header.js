@@ -80,8 +80,8 @@ export default function Header() {
                         className={`relative group ${item.name !== "CATEGORY" ? "hidden sm:block" : ""}`}
                       >
                         <Disclosure.Button
-                          as="a"
-                          href={item.to}
+                          as={Link}
+                          to={item.to}
                           className={classNames(
                             item.current
                               ? "bg-gray-400 text-white mr-6"
@@ -149,20 +149,20 @@ export default function Header() {
                     </a>
                   ) : (
                     <>
-                      <a
-                        href="/login"
+                      <Link
+                        to="/login"
                         className="ml-4 text-gray-800 hover:text-gray-300"
                         data-headlessui-state="open"
                       >
                         Login
-                      </a>
-                      <a
-                        href="/register"
+                      </Link>
+                      <Link
+                        to="/register"
                         className="ml-4 text-gray-800 hover:text-gray-300"
                         data-headlessui-state="open"
                       >
                         Register
-                      </a>
+                      </Link>
                     </>
                   )}
                 </div>
@@ -170,57 +170,54 @@ export default function Header() {
             </div>
           </div>
 
-
-
-
           <Disclosure.Panel className="sm:hidden">
-  <div className="space-y-1 px-2 pb-3 pt-2">
-    {navigation.map((item) => (
-      <Disclosure.Button
-        key={item.name}
-        as={Link}
-        to={item.to}
-        className={classNames(
-          item.current
-            ? "bg-gray-900 text-white"
-            : "text-black hover:bg-gray-700 hover:text-white", // Change color to black
-          "block rounded-md px-3 py-2 text-base font-medium"
-        )}
-        aria-current={item.current ? "page" : undefined}
-      >
-        {item.name}
-      </Disclosure.Button>
-    ))}
-    {auth.user ? (
-      <div className="flex flex-col space-y-2">
-        <a
-          onClick={handleLogout}
-          className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          data-headlessui-state="open"
-        >
-          Logout
-        </a>
-      </div>
-    ) : (
-      <div className="flex flex-col space-y-2">
-        <Link
-          to="/login"
-          className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          data-headlessui-state="open"
-        >
-          Login
-        </Link>
-        <Link
-          to="/register"
-          className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          data-headlessui-state="open"
-        >
-          Register
-        </Link>
-      </div>
-    )}
-  </div>
-</Disclosure.Panel>
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as={Link}
+                  to={item.to}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-black hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+              {auth.user ? (
+                <div className="flex flex-col space-y-2">
+                  <a
+                    onClick={handleLogout}
+                    className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                    data-headlessui-state="open"
+                  >
+                    Logout
+                  </a>
+                </div>
+              ) : (
+                <div className="flex flex-col space-y-2">
+                  <Link
+                    to="/login"
+                    className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                    data-headlessui-state="open"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/register"
+                    className="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                    data-headlessui-state="open"
+                  >
+                    Register
+                  </Link>
+                </div>
+              )}
+            </div>
+          </Disclosure.Panel>
         </>
       )}
     </Disclosure>
