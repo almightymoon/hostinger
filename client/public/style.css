@@ -1,13 +1,13 @@
 #root {
- width: auto;
+  max-width: 1440px;
   margin: 0 auto;
 }
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #root {
-    width: 768px;
+    width: auto;
   }
 }
-@media screen and (max-width: 429px) {
+/* @media screen and (max-width: 429px) {
   #root {
     width: 428px !important;
   }
