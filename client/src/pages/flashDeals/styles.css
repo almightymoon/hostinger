@@ -57,32 +57,3 @@
   width: 795px;
   height: 450px;
 }
-
-@media screen and (max-width: 600px) {
-
-  .grid-item {
-    /* Style individual grid items for better visualization on small screens */
-    padding: 20px;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    text-align: center;
-   
-  }
-
-  /* Zoom-in animation on hover */
-  .grid img:hover {
-    transform: scale(1.05);
-    transition: 1s ease-in-out;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .grid{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-}
