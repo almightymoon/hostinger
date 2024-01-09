@@ -6,33 +6,33 @@ import image2 from "./images/setImage1.png";
 import image3 from "./images/setImage2.png";
 import image4 from "./images/setImageOne.jpeg";
 
-// const Banner = ({ imageSrc, title, buttonText, buttonLink, isFullWidth }) => (
-//   <div
-//     className={`bwp-widget-banner layout-1 ${
-//       isFullWidth ? "style1" : "style2"
-//     }`}>
-//     <div className='bg-banner'>
-//       <div className='banner-wrapper banners'>
-//         <div
-//           className={`bwp-image ${isFullWidth ? "full-width" : "half-width"}`}>
-//           <a href={buttonLink}>
-//             <img src={imageSrc} alt='Banner Image' />
-//           </a>
-//         </div>
-//         <div className='banner-wrapper-infor'>
-//           <div className='info'>
-//             <div className='content'>
-//               <h3 className='title-banner'>{title}</h3>
-//               <a className='button' href={buttonLink}>
-//                 {buttonText}
-//               </a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// );
+const Banner = ({ imageSrc, title, buttonText, buttonLink, isFullWidth }) => (
+  <div
+    className={`bwp-widget-banner layout-1 ${
+      isFullWidth ? "style1" : "style2"
+    }`}>
+    <div className='bg-banner'>
+      <div className='banner-wrapper banners'>
+        <div
+          className={`bwp-image ${isFullWidth ? "full-width" : "half-width"}`}>
+          <a href={buttonLink}>
+            <img src={imageSrc} alt='Banner Image' />
+          </a>
+        </div>
+        <div className='banner-wrapper-infor'>
+          <div className='info'>
+            <div className='content'>
+              <h3 className='title-banner'>{title}</h3>
+              <a className='button' href={buttonLink}>
+                {buttonText}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const Home = () => {
   return (

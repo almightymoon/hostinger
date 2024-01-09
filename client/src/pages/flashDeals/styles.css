@@ -59,9 +59,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr; /* Display one column on small devices */
-  }
 
   .grid-item {
     /* Style individual grid items for better visualization on small screens */
@@ -80,4 +77,12 @@
     transform: scale(1.05);
     transition: 1s ease-in-out;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .grid{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
 }

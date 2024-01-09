@@ -75,3 +75,10 @@
 .row{
   padding-top: 30px;
 }
+@media screen and (max-width: 480px) {
+  .newArrivalsImg{
+    width: 40VH;
+    height: 25VH;
+  }
+  
+}
