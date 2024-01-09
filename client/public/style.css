@@ -1,8 +1,8 @@
 #root {
-  max-width: 1440px;
+ width: auto;
   margin: 0 auto;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #root {
     width: 768px;
   }
@@ -11,4 +11,4 @@
   #root {
     width: 428px !important;
   }
-}
+} */
